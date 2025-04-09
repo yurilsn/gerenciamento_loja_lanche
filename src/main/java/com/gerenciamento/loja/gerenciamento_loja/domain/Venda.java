@@ -18,6 +18,8 @@ import java.util.List;
 @ToString(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
+
+// Pode ser que mude
 public class Venda {
 
     @Id

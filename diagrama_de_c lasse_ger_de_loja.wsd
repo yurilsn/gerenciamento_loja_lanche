@@ -1,0 +1,134 @@
+@startuml
+
+    enum TipoMovimentacao{
+        - saida
+        - entrada
+
+    }
+
+    enum Estalecimento{
+        - Loja
+        - Lanche
+
+    }
+
+
+    class Usuario{
+        -id
+        - nome
+
+    }
+
+    class Movimentacao{
+        - dataMov
+    }
+
+    class Estoque{
+        - nomeProduto
+    }
+
+    class Produto{
+        - nome
+        - valor
+        - qtdProdutos
+    }
+
+    class Venda{
+        - qtdTotal
+        - qtdProdutos
+    }
+
+    ' Venda -- Movimentacao
+    Usuario -- Venda
+    Venda -- Produto
+    Movimentacao -- Produto
+    Movimentacao -- Estoque
+    Estoque -- Produto
+    Usuario -- Movimentacao
+
+    TipoMovimentacao -- Movimentacao
+    Estalecimento -- Movimentacao
+
+
+
+
+
+    ' Produto "0..*" <-- "1" Venda
+
+    ' Produto "0..*" <-- "1" Estoque
+
+
+    ' Venda "1" <-- "1" Movimentacao
+
+
+
+
+
+
+
+
+
+@enduml
+
+
+' @startuml
+    
+'     class Colaborador{
+'         - id
+'         - valor 
+'         - chave
+'     }
+
+'     class OS{
+'         - numeroOs
+'         - periodo
+'         - indiceIas
+'         - indiceIap
+'         - indiceIpp
+'         - indiceIpa
+'         - indiceIqc
+'     }
+
+'     class Configuracao{
+'         - id
+'         - chave
+'         - valor
+'     }
+
+
+'     class Avaliacao{
+'         - notaIpp
+'     }
+
+'     class Metrica{
+'         - id
+'         - item
+'         - titulo
+'         - descricao
+'     }
+
+'     class Integracao{
+'         - id
+'         - nome
+'     }
+
+'     class Especificacao{
+'         - id
+'         - chave
+'         - valor
+'     }
+
+
+
+
+'     Metrica "1..*" <-d- "1" OS
+'     Metrica "1..*" --> "1..*" Colaborador
+'     OS "1" --> "1..*" Avaliacao
+'     Integracao "1" <-d- "1..*" Metrica
+'     Especificacao "1" --> "1" Metrica
+'     Colaborador "1" <-- "1..*" Avaliacao
+'     Integracao "1" --> "1" Configuracao 
+
+
+
+' @enduml
