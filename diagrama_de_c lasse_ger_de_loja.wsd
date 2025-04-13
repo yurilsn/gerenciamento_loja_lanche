@@ -6,10 +6,9 @@
 
     }
 
-    enum Estalecimento{
+    enum Estabelecimento{
         - Loja
         - Lanche
-
     }
 
 
@@ -38,31 +37,19 @@
         - qtdProdutos
     }
 
-    ' Venda -- Movimentacao
-    Usuario -- Venda
-    Venda -- Produto
-    Movimentacao -- Produto
-    Movimentacao -- Estoque
-    Estoque -- Produto
-    Usuario -- Movimentacao
+    Usuario "1" --> "0..*" Venda
+    Usuario "1" --> "0..*" Movimentacao
 
-    TipoMovimentacao -- Movimentacao
-    Estalecimento -- Movimentacao
+    Movimentacao "1" --> "1..*" Produto
+    Movimentacao "1..*" --> "1" Estoque
 
+    Venda "1..*" -- "1..*" Produto
 
+    Estoque "1" -- "1..*" Produto
 
+    TipoMovimentacao "1" -- "1" Movimentacao
 
-
-    ' Produto "0..*" <-- "1" Venda
-
-    ' Produto "0..*" <-- "1" Estoque
-
-
-    ' Venda "1" <-- "1" Movimentacao
-
-
-
-
+    Estabelecimento "1" -- "1" Movimentacao
 
 
 
