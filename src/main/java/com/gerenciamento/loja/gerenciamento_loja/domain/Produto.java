@@ -10,22 +10,24 @@ import org.hibernate.annotations.DynamicUpdate;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id", callSuper = false)
-@Table(name = "SAIDA_DINHEIRO")
+@Table(name = "PRODUTO")
 @DynamicUpdate
 @DynamicInsert
 @ToString(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
-public class SaidaDinheiro {
+public class Produto {
 
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    public String valor;
+    private String nome;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "venda_id", referencedColumnName = "id")  // This means Foreign key will be created only in the Product table i.e. extra column 'stock_id' will be created in the Product table
-    private Venda venda;
+    @Column
+    private Integer valor;
+
+    @Column
+    private Integer qtdProdutos;
 }

@@ -18,18 +18,16 @@ import java.util.List;
 @ToString(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
-
-// Pode ser que mude
 public class Venda {
 
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    public String valorTotal;
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "venda_id", referencedColumnName = "id")
-    private List<Item> itens;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "VENDA_PRODUTO",
+            joinColumns = @JoinColumn(name = "venda_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "produto_id", referencedColumnName = "id"))
+    private List<Produto> produtos;
 }

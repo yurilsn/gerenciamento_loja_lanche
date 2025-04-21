@@ -12,23 +12,25 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id", callSuper = false)
-@Table(name = "ESTOQUE")
+@Table(name = "USUARIO")
 @DynamicUpdate
 @DynamicInsert
 @ToString(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Estoque {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    public String nome;
+    private String nome;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "estoque_id", referencedColumnName = "id")
-    private List<Produto> itens;
+    @JoinColumn(name = "USUARIO_ID", referencedColumnName = "id")
+    private List<Movimentacao> movimentacoes;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "USUARIO_ID", referencedColumnName = "id")
+    private List<Venda> vendas;
 }
