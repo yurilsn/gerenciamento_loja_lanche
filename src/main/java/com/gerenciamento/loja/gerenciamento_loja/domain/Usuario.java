@@ -26,6 +26,8 @@ public class Usuario {
 
     private String nome;
 
+    private String senha;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "USUARIO_ID", referencedColumnName = "id")
     private List<Movimentacao> movimentacoes;
