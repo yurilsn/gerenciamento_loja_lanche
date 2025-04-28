@@ -1,4 +1,4 @@
-package com.gerenciamento.loja.gerenciamento_loja.service.security;
+package com.gerenciamento.loja.gerenciamento_loja.security;
 
 import com.gerenciamento.loja.gerenciamento_loja.security.jwt.JwtService;
 import lombok.AllArgsConstructor;

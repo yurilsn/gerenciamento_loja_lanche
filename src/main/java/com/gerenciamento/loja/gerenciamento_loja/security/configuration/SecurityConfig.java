@@ -1,4 +1,4 @@
-package com.gerenciamento.loja.gerenciamento_loja.configuration;
+package com.gerenciamento.loja.gerenciamento_loja.security.configuration;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
