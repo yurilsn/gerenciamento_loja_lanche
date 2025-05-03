@@ -1,6 +1,8 @@
 package com.gerenciamento.loja.gerenciamento_loja.domain;
 
 
+import com.gerenciamento.loja.gerenciamento_loja.domain.enums.Estabelecimento;
+import com.gerenciamento.loja.gerenciamento_loja.domain.enums.TipoMovimentacao;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
@@ -26,6 +28,14 @@ public class Venda {
 
     @Column
     private Integer totalVenda;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Estabelecimento estabelecimento;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private TipoMovimentacao tipoMovimentacao;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
