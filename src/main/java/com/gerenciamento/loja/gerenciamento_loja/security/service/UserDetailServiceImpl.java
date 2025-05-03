@@ -1,6 +1,7 @@
-package com.gerenciamento.loja.gerenciamento_loja.security;
+package com.gerenciamento.loja.gerenciamento_loja.security.service;
 
 import com.gerenciamento.loja.gerenciamento_loja.repository.UsuarioRepository;
+import com.gerenciamento.loja.gerenciamento_loja.security.UsuarioAutenticado;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

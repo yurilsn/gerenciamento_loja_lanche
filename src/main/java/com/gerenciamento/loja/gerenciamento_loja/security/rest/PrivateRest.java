@@ -1,4 +1,4 @@
-package com.gerenciamento.loja.gerenciamento_loja.security;
+package com.gerenciamento.loja.gerenciamento_loja.security.rest;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
