@@ -24,6 +24,9 @@ public class Venda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
+    private Integer totalVenda;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "VENDA_PRODUTO",
