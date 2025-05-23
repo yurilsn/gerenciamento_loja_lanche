@@ -1,6 +1,7 @@
 package com.gerenciamento.loja.gerenciamento_loja.domain.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import lombok.EqualsAndHashCode;
 
 public enum Estabelecimento {
     LOJA("LOJA"),

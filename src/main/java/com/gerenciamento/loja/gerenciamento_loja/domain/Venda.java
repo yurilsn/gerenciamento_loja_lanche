@@ -8,6 +8,7 @@ import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -28,6 +29,9 @@ public class Venda {
 
     @Column
     private Integer totalVenda;
+
+    @Column
+    private LocalDateTime dataVenda;
 
     @Column
     @Enumerated(EnumType.STRING)

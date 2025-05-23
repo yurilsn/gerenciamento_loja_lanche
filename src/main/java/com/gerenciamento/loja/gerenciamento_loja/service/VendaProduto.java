@@ -21,7 +21,6 @@ import java.util.List;
 @AllArgsConstructor
 public class VendaProduto {
     private final VendaRepository vendaRepository;
-    private final MovimentacaoRepository movimentacaoRepository;
     private final UsuarioRepository usuarioRepository;
 
     @Transactional
@@ -52,7 +51,6 @@ public class VendaProduto {
 
     public Venda createVenda(List<Produto> produtos){
         Venda venda = new Venda();
-
         venda.setProdutos(produtos);
         venda.setTipoMovimentacao(TipoMovimentacao.SAIDA);
         venda.setEstabelecimento(produtos.get(0).getEstabelecimento());

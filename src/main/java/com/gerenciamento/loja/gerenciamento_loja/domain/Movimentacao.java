@@ -9,6 +9,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.sound.sampled.Port;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -28,6 +29,10 @@ public class Movimentacao {
     private Long id;
 
     @Column
+    private LocalDateTime dataMovimentacao;
+
+
+    @Column
     @Enumerated(EnumType.STRING)
     private TipoMovimentacao tipoMovimentacao;
 
@@ -38,6 +43,7 @@ public class Movimentacao {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ESTOQUE_ID")
     private Estoque estoque;
+
 
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
